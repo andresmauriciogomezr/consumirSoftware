@@ -17,10 +17,12 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'satellizer'
+    'satellizer',
+    'toastr'
   ])
   .config(function ($routeProvider, $authProvider) {
-    $authProvider.loginUrl = 'http://localhost/software/autenticar';
+    //$authProvider.loginUrl = 'http://localhost/software/autenticar';
+    $authProvider.loginUrl = 'http://software.goodfirmcolombia.co/autenticar';
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -39,6 +41,23 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
         controllerAs: 'login'
+      })
+      .when('/registrar', {
+        templateUrl: 'views/registrar.html',
+        controller: 'UsuarioCtrl',
+        controllerAs: 'controlador'
       });
 
+  })
+  .run(function($rootScope, $location, authUser, toastr){
+    var rutasPrivadas = ['/about'];
+
+    $rootScope.$on('$routeChangeStart', function(){
+      if(($.inArray($location.path(), rutasPrivadas) != -1 && !authUser.isLoggedIn())){
+        console.log('pasa');
+        toastr.error('Debe iniciar sesión', 'Mensaje');
+        $location.path('login');
+      }
+
+    });
   });

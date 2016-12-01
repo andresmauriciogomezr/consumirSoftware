@@ -9,9 +9,16 @@
  */
 angular.module('consumerApp')
   .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    //this.awesomeThings = [
+    //  'HTML5 Boilerplate',
+    //  'AngularJS',
+    //  'Karma'
+    //];
+
+    var vm = this;
+
+    vm.menuTemplate = {
+    	url : 'views/generico.html'
+    }
+
   });
