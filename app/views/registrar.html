@@ -1,0 +1,61 @@
+
+
+
+<div ng-include="login.menuTemplate.url"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Register {{mensaje}}</div>
+                <div class="panel-body">
+                   
+                    <form class="form-horizontal" role="form" name="nuevo_usuario" ng-submit="registrarUsuario()">
+                       
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Nombre</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" ng-model="Usuario.name" required autofocus>
+                            </div>
+                        </div>
+
+     
+
+                        <div class="form-group">
+                            <label for="email" class="col-md-4 control-label">Correo Electrónico</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" ng-model="Usuario.email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="col-md-4 control-label">contraseña</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" ng-model="Usuario.password" required>
+                            </div>
+                        </div>                        
+                        
+                        <!---<div class="form-group">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirma</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>-->
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">                                
+                                <button type="submit" class="btn btn-primary">
+                                    Registrar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
