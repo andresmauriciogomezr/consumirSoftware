@@ -1,0 +1,55 @@
+<!--************************************menú administrar**************************************-->
+
+          <div class="menu_administrar" id="div_menu_administrar" ng-controller="MainCtrl as menu">
+
+            <nav class="row navbar navbar-default navbar-fixed-menu_administrar borde_barra_administrar"><!--************************************menú administrar************************-->
+
+              <div id="barra_administrar" class="container-fluid" >
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>           
+                </div>
+              
+                {{menu.mensaje}}
+                <div class=" navbar-collapse" id="opciones_barra_administrar">
+
+                  <ul class="nav nav-pills navbar-nav pull-right" id="opciones_administrar">
+                    <li>
+                      <a href="" id="titulo_menu_administrar navbar-right" class="navbar-brand opcion_administrar col-md-1" ></a>
+
+                    </li>
+                    <li role="presentation" class="dropdown opcion_administrar" id="link_articulos">
+                      <a class="dropdown-toggle" role="button" id="drop_administrar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seleccione sus país
+                      <span class="caret"></span>
+                      </a>                      
+                      <ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
+                        
+                        <li id="link_agregar_articulo"  role="presentacion" >
+                          <a href="" ng-click="menu.mensaje = 'ojala'">a</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio()">n</a>                    
+                          <a ng-click="menu.cambiarPecio()">{{menu.paises.CA}}</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio(CL)">{{menu.paises.CL}}</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio(CN)">{{menu.paises.CN}}</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio(CO)">{{menu.paises.CO}}</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio(CR)">{{menu.paises.CR}}</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio(CU)">{{menu.paises.CU}}</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio(DE)">{{menu.paises.DE}}</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio(DK)">{{menu.paises.DK}}</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio(DO)">{{menu.paises.DO}}</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio(ES)">{{menu.paises.ES}}</a>                    
+                          <a href="" ng-click="menu.cambiarPrecio(US)">{{menu.paises.US}}</a>                    
+                        </li>
+
+                      </ul>
+                    </li>
+
+                                                     
+                  </ul>     
+                </div>
+              </div>
+            </nav>  
+          </div><!--************************************menú administrar**************************************-->

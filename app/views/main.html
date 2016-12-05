@@ -1,27 +1,51 @@
 <div ng-include="main.menuTemplate.url"></div>
+
 <div class="container">
-  
-  <div class="jumbotron">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">
-      <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-      Always a pleasure scaffolding your apps.
-    </p>
-    <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-  </div>
 
-  <div class="row marketing">
-    <h4>HTML5 Boilerplate</h4>
-    <p>
-      HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-    </p>
+        <div class=""  id="div_ver_articulos" ng-repeat="libro in main.libros"><!--*********aquí se cargan los articulos**************-->
+      
+          <div class="col-md-6 col-xs-11" >
+            <div class="thumbnail thumbnail_ver row" >            
+                <div id="" class="col-xs-13">
+                 
+                    <img src="{{libro.ruta_imagen}}" class="img-responsive img-rounded imagen_ver""> 
+                 
+                </div>
 
-    <h4>Angular</h4>
-    <p>
-      AngularJS is a toolset for building the framework most suited to your application development.
-    </p>
+                <div id="{{libro.id}}" class="scroll caption caption_ver" >
+                    <div class="col-xs-13" >
+                      <h3 class="titulo_cuadro_articulo">{{libro.nombre}}</h3>
+                    </div>
 
-    <h4>Karma</h4>
-    <p>Spectacular Test Runner for JavaScript.</p>
-  </div>
+                    <div class="col-xs-13 row" >
+                      <p id="parrafo_articulo" class="parrafo_articulo">{{libro.resumen}}</p>
+
+                        <div class="col-xs-6 list-group-item">
+                          <strong>Autor : </strong> <p>{{libro.autor}}</p>
+                        </div>
+
+                        <div class="col-xs-6 list-group-item">
+                          <strong>Précio : </strong> <p>{{libro.precio}}</p>
+                        </div>
+
+                    </div>
+                </div><!--cierre caption-->
+            
+                <div class="">
+                  <a href="{{libro.id}}" class="btn boton_enviar_articulo enlace_modal">
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Comprar
+                  </a>                  
+                  <a class="btn btn-default">
+                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>          
+                  </a>        
+                  <a class="btn btn-default">
+                    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>          
+                  </a>
+                </div>
+
+            </div>
+          </div>
+      </div>
+
+ 
 </div>

@@ -1,5 +1,6 @@
 angular.module('consumerApp')
 .controller('UsuarioCtrl', function($scope, CrearUsuario, toastr, $resource, authUser){
+	
 	$scope.mensaje = 'es el mensaje de prueba';
 
 	$scope.Usuario = {};	

@@ -1,11 +1,16 @@
 'use strict';
 
 angular.module('consumerApp')
-.controller('MenuCtrl', function($location, authUser, $scope, sessionControl){
+.controller('MenuCtrl', function($location, authUser, $scope, sessionControl, HomeFactory){
 
 	var vm = this;
 
 	vm.isLogin = authUser.isLoggedIn();
+	
+	vm.menuPaises = {
+        url : 'views/menuPaises.html'
+    },
+	
 
 	$scope.$watch(function(){
 		return authUser.isLoggedIn();

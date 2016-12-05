@@ -1,15 +1,13 @@
 @font-face{
 	font-family: caviar;
-	src:url(../fonts/CaviarDreams_BoldItalic.ttf);
 }
 
 @font-face{
 	font-family: comfortaa;
-	src:url(../fonts/Comfortaa_Regular.ttf);
+	
 }
 @font-face{
-	font-family: decker;
-	src:url(../fonts/Decker.ttf);
+	
 }
 
 
@@ -57,7 +55,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#293f3f', end
 
 .opcion_cabecera{
 	font-family: sans-serif;
-	font-size: 26px;
+	font-size: 20px;
 	color: #777;
 	text-shadow: #1b2333 -0.1em -0.1em 0.2em;
 

@@ -1,29 +1,12 @@
 <!--*********************************** cabecera *************************************-->
 <div class="header" ng-controller="MenuCtrl as menu">
       <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+        
+        <div class="cabecera">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+          <div class="container no_fondo" id="panel_lema_logo">
 
-            <a class="navbar-brand" href="#/">consumer</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li ng-class="{active : menu.isActive('/')}"><a href="#/">Inicio</a></li>
-              <li ng-class="{active : menu.isActive('/about')}"><a ng-href="#/about">About</a></li>
-              <li ng-class="{active : menu.isActive('/registrar')}"><a ng-href="#/registrar">Registrarser</a></li>
-              <li ng-class=""><a ng-href="#/login">Iniciar Sesión</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
 
                   <a class="dropdown-toogle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >
@@ -34,13 +17,8 @@
                     
                     <li>
                       <div class="navbar-login">
-                        <div class="row">
-                          
-                          <div class="col-lg-4">
-                            <p class="text-center">
-                              a
-                            </p>
-                          </div>
+                        <div class="row">             
+                   
 
                           <div class="col-lg-8">
                             <p class="text-left">{{menu.user.name}}</p>
@@ -66,12 +44,72 @@
                   </ul>
                   
                 </li>
-            </ul>            
+            </ul>   
+        
+            <div class="row margen " >
+
+              <div class="col-xs-13 col-md-3" id="fila_logo">
+                <a id="opcion_administrar" href="" class="btn">
+                  <img src="" class="img-responsive img-rounded sombra_logo">
+                </a>
+
+              </div>
+
+              <div class="col-md-9 col-md-offset-3 visible-md-block visible-lg-block ">             
+               
+                <div class="">
+                  <h1 id="lema" class="">Consultoría Empresarial <small> </small></h1>   
+                </div>
+
+              </div>          
+
+          </div><!--row-->
+
+          {{menu.mensaje}}
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/">Software</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav">
+              <li ng-class="{active : menu.isActive('/')}"><a class="opcion_cabecera" href="#/">Inicio</a></li>   
+
+              <li ng-class="{active : menu.isActive('/about')}">
+                <div class="dropdown">
+                  <a class="btn dropdown-toggle opcion_cabecera" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Libros
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    
+                  <li>hola</li>
+                  </ul>
+                </div>                
+              </li>
+
+              <li ng-class="{active : menu.isActive('/about')}"><a  class="opcion_cabecera"ng-href="#/about">About</a></li>
+              <li ng-class="{active : menu.isActive('/registrar')}"><a class="opcion_cabecera" ng-href="#/registrar">Registrarser</a></li>
+              <li ng-class=""><a ng-href="#/login" class="opcion_cabecera">Iniciar Sesión</a></li>
+            </ul>                    
 
 
           </div>
+
+          <div ng-include="menu.menuPaises.url"></div>
+
+
         </div>
       </div>
     </div>
 
 <!--*********************************** fin cabecera *************************************-->
+

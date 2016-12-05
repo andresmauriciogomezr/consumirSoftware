@@ -23,6 +23,7 @@ angular
   .config(function ($routeProvider, $authProvider) {
     //$authProvider.loginUrl = 'http://localhost/software/autenticar';
     $authProvider.loginUrl = 'http://software.goodfirmcolombia.co/autenticar';
+    
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -41,6 +42,11 @@ angular
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
         controllerAs: 'login'
+      })
+      .when('/cambiar-precio/:pais',{
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl',
+        controllerAs: 'main'
       })
       .when('/registrar', {
         templateUrl: 'views/registrar.html',
