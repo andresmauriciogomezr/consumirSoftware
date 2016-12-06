@@ -8,16 +8,11 @@
  * Controller of the consumerApp
  */
 angular.module('consumerApp')
-  .controller('MainCtrl', function (HomeFactory, $routeParams) {
+  .controller('MainCtrl', function (HomeFactory, $routeParams, toastr, $location) {
 
     var vm = this;
 
-    
-    vm.mensaje = 'sisas';
-        //console.log(datos.data);
-       //vm.paises = datos.data;
-    //});
-    
+    vm.mensaje = 'hola';
 
     vm.libros = [];
 
@@ -32,6 +27,30 @@ angular.module('consumerApp')
     vm.cambarPrecio = function(){
         console.log('ojala');
         //HomeFactory.cambarPrecio();
+    };
+
+    vm.iniciar= function(){
+        console.log('iniciando');
+    };
+
+    vm.error= function(){
+        toastr.error('Debe inciar seción antes de comprar un artículo', 'Error');
+    };
+
+    vm.compra = {
+        'idLIbro' : '',
+        'email' : '',
+        'numeroTarjeta' : '',
+        'password' : ''
+    };
+    
+
+
+    vm.comprar= function(id, email){
+        var datos = {'id' : id, 'email' : email};
+        //$location.path('/comprar');
+        //toastr.success(respuesta.error, 'Error');
+        HomeFactory.comprar(datos);
     };
 
 

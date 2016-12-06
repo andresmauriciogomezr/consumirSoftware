@@ -1,5 +1,5 @@
 <!--*********************************** cabecera *************************************-->
-<div class="header" ng-controller="MenuCtrl as menu">
+<div class="header" ng-controller="MenuCtrl as menu" ng-controller="MainCtrl as main">
       <div class="navbar navbar-default" role="navigation">
         
         <div class="cabecera">
@@ -65,7 +65,7 @@
 
           </div><!--row-->
 
-          {{menu.mensaje}}
+          
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -91,14 +91,15 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     
-                  <li>hola</li>
+                    <li ng-repeat="libro in main.libros"><a href="#/">{{libro.nombre}}</a></li>  
+                    
                   </ul>
                 </div>                
               </li>
 
               <li ng-class="{active : menu.isActive('/about')}"><a  class="opcion_cabecera"ng-href="#/about">About</a></li>
-              <li ng-class="{active : menu.isActive('/registrar')}"><a class="opcion_cabecera" ng-href="#/registrar">Registrarser</a></li>
-              <li ng-class=""><a ng-href="#/login" class="opcion_cabecera">Iniciar Sesión</a></li>
+              <li ng-if="!menu.isLogin" ng-class="{active : menu.isActive('/registrar')}"><a class="opcion_cabecera" ng-href="#/registrar">Registrarser</a></li>
+              <li ng-if="!menu.isLogin" ng-class=""><a ng-href="#/login" class="opcion_cabecera">Iniciar Sesión</a></li>
             </ul>                    
 
 

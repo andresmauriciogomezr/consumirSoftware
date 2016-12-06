@@ -48,6 +48,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/comprar:datos',{
+        templateUrl: 'views/comprar.html',
+        controller: 'MainCtrl',
+        controllerAs: 'main'
+      })
       .when('/registrar', {
         templateUrl: 'views/registrar.html',
         controller: 'UsuarioCtrl',

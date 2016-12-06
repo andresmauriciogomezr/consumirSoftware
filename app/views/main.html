@@ -1,6 +1,6 @@
 <div ng-include="main.menuTemplate.url"></div>
 
-<div class="container">
+<div class="container" ng-controller="MenuCtrl as menu">
 
         <div class=""  id="div_ver_articulos" ng-repeat="libro in main.libros"><!--*********aquí se cargan los articulos**************-->
       
@@ -19,7 +19,7 @@
 
                     <div class="col-xs-13 row" >
                       <p id="parrafo_articulo" class="parrafo_articulo">{{libro.resumen}}</p>
-
+                      
                         <div class="col-xs-6 list-group-item">
                           <strong>Autor : </strong> <p>{{libro.autor}}</p>
                         </div>
@@ -31,10 +31,13 @@
                     </div>
                 </div><!--cierre caption-->
             
-                <div class="">
-                  <a href="{{libro.id}}" class="btn boton_enviar_articulo enlace_modal">
+                <div class="">                
+                  <a ng-if="menu.isLogin" ng-click ="main.comprar(libro.id, menu.user.email)" class="btn boton_enviar_articulo enlace_modal">
                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Comprar
-                  </a>                  
+                  </a>     
+                  <a ng-if="!menu.isLogin" href="#/login" ng-click ="main.error()" class="btn boton_enviar_articulo enlace_modal">
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Comprar
+                  </a>             
                   <a class="btn btn-default">
                     <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>          
                   </a>        

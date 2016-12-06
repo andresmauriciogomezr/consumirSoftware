@@ -6,7 +6,8 @@ angular.module('consumerApp')
 	var vm = this;
 
 	vm.isLogin = authUser.isLoggedIn();
-	
+
+		
 	vm.menuPaises = {
         url : 'views/menuPaises.html'
     },
